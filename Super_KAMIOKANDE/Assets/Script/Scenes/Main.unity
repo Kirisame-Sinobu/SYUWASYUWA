@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb9de8b464864e178fb1db62de252ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  last_time_text: {fileID: 1979621127}
 --- !u!114 &17923333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1336045720}
   - component: {fileID: 1336045719}
+  - component: {fileID: 1336045721}
   m_Layer: 0
   m_Name: Cola
   m_TagString: Untagged
@@ -410,12 +412,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336045718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: -0.23, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.06063, y: 0.06063, z: 0.06063}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336045721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336045718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea83108d1099149fe925bf8f05252af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubble: {fileID: 5658218449689360763, guid: dcf79571d19e24a7da36cad6f780f5e0, type: 3}
 --- !u!1 &1737848373
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1979621128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -811,6 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033c6172b2d7947538641aa95505e198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shake_pawer: {fileID: 1336045718}
 --- !u!114 &1979621132
 MonoBehaviour:
   m_ObjectHideFlags: 0

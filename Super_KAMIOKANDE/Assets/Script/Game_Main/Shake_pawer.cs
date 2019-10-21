@@ -32,6 +32,7 @@ public class Shake_pawer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        after_shake = Input.acceleration;
         now_pawer = (after_shake - befor_shake).magnitude;
         pawer += now_pawer;
 
@@ -41,6 +42,7 @@ public class Shake_pawer : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, angle);
         float pos = Mathf.LerpAngle(minAngle, maxAngle, (1 + Mathf.Cos(now_pawer * (now_time / wave_time) * Mathf.PI)) / 2.0f);
         transform.position = new Vector3(0, pos * 0.02f, 0) + start_pos;
+        befor_shake = after_shake;
     }
 
     void criate_bubble()

@@ -24,6 +24,7 @@ public class Shake_hand : MonoBehaviour
         after_shake = Input.acceleration;
 
         is_shake = after_shake - befor_shake;
+        //Debug.Log(is_shake.magnitude);
         if(is_shake.magnitude >= 1)
         {
             SceneManager.LoadScene("Main");

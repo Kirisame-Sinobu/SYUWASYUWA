@@ -30,6 +30,8 @@ public class Last_time : MonoBehaviour
 
     void end_shake()
     {
-        //pawar_getter.Get_pawer;
+        Debug.Log(pawar_getter.Get_pawer);
+       　FlyBottle.shakePow = pawar_getter.Get_pawer;
+        Destroy(pawar_getter);
     }
 }

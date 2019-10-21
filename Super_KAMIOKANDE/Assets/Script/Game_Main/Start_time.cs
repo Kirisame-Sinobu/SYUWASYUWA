@@ -45,7 +45,7 @@ public class Start_time : MonoBehaviour
         }
         else
         {
-            
+            fede_out();
         }
     }
 
@@ -113,5 +113,11 @@ public class Start_time : MonoBehaviour
             pos.y = end_pos;
             this.transform.localPosition = pos;
         }
+    }
+
+    float fade;
+    void fede_out()
+    {
+        this.GetComponent<Text>().color = new Color(0, 0, 0, 0);
     }
 }
