@@ -8,6 +8,9 @@ public class Start_time : MonoBehaviour
     float start_time = 4.0f;
     float start_pos = 1500.0f;
     float end_pos = 0.0f;
+
+    [SerializeField]
+    private GameObject last_time_text; 
     
 
     // Start is called before the first frame update
@@ -34,11 +37,15 @@ public class Start_time : MonoBehaviour
             one_time();
         }else if(start_time >= 0)
         {
+            if (!last_time_text.activeSelf)
+            {
+                last_time_text.SetActive(true);
+            }
             zero_time();
         }
         else
         {
-
+            
         }
     }
 

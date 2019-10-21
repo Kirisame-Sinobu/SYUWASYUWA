@@ -15,7 +15,6 @@ public class Cola_wave : MonoBehaviour
     float minAngle = -30.0f, maxAngle = 30.0f;
     float now_time;
     float wave_time = 0.6f;
-    bool is_wave = true;
 
     // Update is called once per frame
     void Update()
