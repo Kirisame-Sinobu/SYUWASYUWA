@@ -25,7 +25,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Amount: 0
-    - _Speed: 10
+    - _Speed: 8.17
     - _Wave: 1
-    - _Wave_num: 10
+    - _Wave_num: 5.81
     m_Colors: []
