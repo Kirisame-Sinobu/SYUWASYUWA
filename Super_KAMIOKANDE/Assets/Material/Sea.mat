@@ -74,7 +74,7 @@ Material:
     - _Wave_depth: 0.1
     - _Wave_scale: 25
     - _Wave_side: 0
-    - _Wave_speed: 5
+    - _Wave_speed: 0.52
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
