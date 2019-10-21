@@ -8,7 +8,7 @@ public class criate_bubble : MonoBehaviour
     public GameObject bubble;
 
     float now_time = 0.0f;
-    float criate_time = 1.5f;
+    float criate_time = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,8 @@ public class criate_bubble : MonoBehaviour
         GameObject temp;
         if(now_time > criate_time)
         {
-            temp = Instantiate(bubble, new Vector3(Random.Range(-10.0f,10.0f), -6, 0),Quaternion.identity);
-            float temp_size = Random.Range(0.1f, 0.7f);
+            temp = Instantiate(bubble, new Vector3(Random.Range(-3.0f,3.0f), -6, 0),Quaternion.identity);
+            float temp_size = Random.Range(0.03f, 0.1f);
             temp.transform.localScale = new Vector3(temp_size,temp_size,temp_size);
             Material temp_mate;
             temp_mate = temp.GetComponent<Renderer>().material;
