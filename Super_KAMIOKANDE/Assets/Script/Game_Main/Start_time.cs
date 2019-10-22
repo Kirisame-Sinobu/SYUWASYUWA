@@ -57,7 +57,7 @@ public class Start_time : MonoBehaviour
         {
             pos.y = Mathf.Lerp(start_pos, end_pos, Mathf.Sin((4.0f - start_time) * Mathf.PI));
             //Debug.Log(Mathf.Sin((4.0f - start_time) * Mathf.PI));
-            Debug.Log(pos.y);
+            //Debug.Log(pos.y);
             this.transform.localPosition = pos;
         }
         else
