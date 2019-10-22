@@ -29,7 +29,7 @@ public class FlyModeManager : MonoBehaviour
 
     public void FinishText()
     {
-        Debug.LogError("きてるやで！");
+        //Debug.LogError("きてるやで！");
         finish.SetActive(true);
         Invoke("ToResultScene", 2.0f);
     }
