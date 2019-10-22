@@ -10,6 +10,9 @@ public class Last_time : MonoBehaviour
     private GameObject Shake_pawer;
     Shake_pawer pawar_getter;
 
+    [SerializeField]
+    private GameObject end_text;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,7 @@ public class Last_time : MonoBehaviour
         Debug.Log(pawar_getter.Get_pawer);
         FlyBottle.shakePow = pawar_getter.Get_pawer;
         Destroy(pawar_getter);
+        end_text.SetActive(true);
 
     }
 }

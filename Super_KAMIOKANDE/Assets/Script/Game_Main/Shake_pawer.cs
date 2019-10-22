@@ -43,6 +43,8 @@ public class Shake_pawer : MonoBehaviour
         float pos = Mathf.LerpAngle(minAngle, maxAngle, (1 + Mathf.Cos((0.5f + (int)now_pawer) * (now_time / wave_time) * Mathf.PI)) / 2.0f);
         transform.position = new Vector3(0, pos * 0.02f, 0) + start_pos;
         befor_shake = after_shake;
+
+        criate_bubble();
     }
 
     void criate_bubble()
