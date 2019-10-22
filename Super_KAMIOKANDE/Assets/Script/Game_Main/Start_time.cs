@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Start_time : MonoBehaviour
 {
     float start_time = 4.0f;
     float start_pos = 1500.0f;
     float end_pos = 0.0f;
+
+    private bool which;
 
     [SerializeField]
     private GameObject last_time_text; 
@@ -16,6 +19,14 @@ public class Start_time : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(SceneManager.GetActiveScene().name == "Main")
+        {
+            which = true;   //こっちMain
+        }
+        else
+        {
+            which = false;  //こっちMain2
+        }
         start_time = 4.0f;
         end_pos = 0.0f;
     }
