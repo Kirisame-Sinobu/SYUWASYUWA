@@ -7,7 +7,7 @@ public class DistanceText : MonoBehaviour
 {
     [SerializeField] private GameObject Cola;
 
-    float distance;
+    public static float distance;
     string kyori;
     Text _text;
 
