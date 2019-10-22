@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FlyModeManager : MonoBehaviour
 {
@@ -30,5 +31,13 @@ public class FlyModeManager : MonoBehaviour
     {
         Debug.LogError("きてるやで！");
         finish.SetActive(true);
+        Invoke("ToResultScene", 2.0f);
     }
+
+    private void ToResultScene()
+    {
+        Debug.Log("きて？");
+        SceneManager.LoadScene("Result");
+    }
+
 }

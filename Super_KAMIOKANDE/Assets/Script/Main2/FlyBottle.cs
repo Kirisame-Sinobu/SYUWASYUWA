@@ -10,7 +10,7 @@ public class FlyBottle : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float riseSpeed;
     [SerializeField] private GameObject flymodemanager;
-    public static float shakePow = 1000f;
+    public static float shakePow = 100f;
     public static bool isStart;
     private FlyModeManager _flyModeManager;
     //public float ShakePow { get { return shakePow;} set { shakePow = value;}
@@ -27,7 +27,7 @@ public class FlyBottle : MonoBehaviour
         {
             return;
         }
-        Debug.Log(shakePow);
+        //Debug.Log(shakePow);
         if (shakePow >= 0f)
         {
             Rise();
