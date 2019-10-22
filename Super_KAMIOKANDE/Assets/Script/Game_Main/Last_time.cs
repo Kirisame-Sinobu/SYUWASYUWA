@@ -27,6 +27,7 @@ public class Last_time : MonoBehaviour
         //Debug.Log(Mathf.Clamp(((int)last_time), 0.0f, 5.0f));
         if(last_time <= 0)
         {
+            Handheld.Vibrate();
             end_shake();
         }
     }
