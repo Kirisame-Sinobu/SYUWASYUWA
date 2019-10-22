@@ -57,6 +57,7 @@ public class Start_time : MonoBehaviour
         {
             pos.y = Mathf.Lerp(start_pos, end_pos, Mathf.Sin((4.0f - start_time) * Mathf.PI));
             //Debug.Log(Mathf.Sin((4.0f - start_time) * Mathf.PI));
+            Debug.Log(pos.y);
             this.transform.localPosition = pos;
         }
         else
@@ -118,6 +119,10 @@ public class Start_time : MonoBehaviour
     float fade;
     void fede_out()
     {
-        this.GetComponent<Text>().color = new Color(0, 0, 0, 0);
+        this.GetComponent<Text>().color = new Color(1, 1, 1, Mathf.Clamp(1.0f-Mathf.Abs(start_time),0.0f,1.0f));
+        if (start_time <= -1)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

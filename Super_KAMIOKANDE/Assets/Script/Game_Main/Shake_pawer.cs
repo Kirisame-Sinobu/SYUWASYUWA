@@ -38,9 +38,9 @@ public class Shake_pawer : MonoBehaviour
 
         now_time += Time.deltaTime;
 
-        float angle = Mathf.LerpAngle(minAngle, maxAngle, (1 + Mathf.Sin(now_pawer * (now_time / wave_time) * Mathf.PI)) / 2.0f);
+        float angle = Mathf.LerpAngle(minAngle, maxAngle, (1 + Mathf.Sin((0.5f + (int)now_pawer) * (now_time / wave_time) * Mathf.PI)) / 2.0f);
         transform.eulerAngles = new Vector3(0, 0, angle);
-        float pos = Mathf.LerpAngle(minAngle, maxAngle, (1 + Mathf.Cos(now_pawer * (now_time / wave_time) * Mathf.PI)) / 2.0f);
+        float pos = Mathf.LerpAngle(minAngle, maxAngle, (1 + Mathf.Cos((0.5f + (int)now_pawer) * (now_time / wave_time) * Mathf.PI)) / 2.0f);
         transform.position = new Vector3(0, pos * 0.02f, 0) + start_pos;
         befor_shake = after_shake;
     }

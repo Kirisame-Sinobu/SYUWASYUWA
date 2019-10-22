@@ -9,7 +9,7 @@ public class Up_bubble : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Up_speed = Random.Range(0.6f, 1.0f);
+        Up_speed = Random.Range(0.6f, 1.7f);
         //Debug.Log(Up_speed);
     }
 

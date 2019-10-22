@@ -1210,6 +1210,7 @@ GameObject:
   - component: {fileID: 2101904800}
   - component: {fileID: 2101904802}
   - component: {fileID: 2101904803}
+  - component: {fileID: 2101904804}
   m_Layer: 0
   m_Name: Kora
   m_TagString: Untagged
@@ -1301,5 +1302,17 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 629407103d741493880972740915ce60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2101904804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101904799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e827519a812479fa9d89fe424baf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
