@@ -48,9 +48,12 @@ public class Start_time : MonoBehaviour
             one_time();
         }else if(start_time >= 0)
         {
-            if (!last_time_text.activeSelf)
+            if (which)
             {
-                last_time_text.SetActive(true);
+                if (!last_time_text.activeSelf)
+                {
+                    last_time_text.SetActive(true);
+                }
             }
             zero_time();
         }
@@ -114,7 +117,15 @@ public class Start_time : MonoBehaviour
     void zero_time()
     {
         Vector3 pos = this.transform.localPosition;
-        this.GetComponent<Text>().text = "フレ！";
+        if (which)
+        {
+            this.GetComponent<Text>().text = "フレ！";
+        }
+        else
+        {
+            this.GetComponent<Text>().text = " スタート！";
+            FlyBottle.isStart = true;
+        }
         if (start_time >= 0.5f)
         {
             pos.y = Mathf.Lerp(start_pos, end_pos, Mathf.Sin((1.0f - start_time) * Mathf.PI));

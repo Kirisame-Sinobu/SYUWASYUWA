@@ -7,6 +7,7 @@ public class FlyModeManager : MonoBehaviour
 {
     [SerializeField] private Slider slider;
     [SerializeField] private float pow;
+    [SerializeField] private GameObject finish;
     void Start()
     {
         pow = FlyBottle.shakePow;
@@ -16,8 +17,18 @@ public class FlyModeManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!FlyBottle.isStart)
+        {
+            return;
+        }
         slider.value -= 0.000325f;
         FlyBottle.shakePow -= 0.65f;
         
+    }
+
+    public void FinishText()
+    {
+        Debug.LogError("きてるやで！");
+        finish.SetActive(true);
     }
 }

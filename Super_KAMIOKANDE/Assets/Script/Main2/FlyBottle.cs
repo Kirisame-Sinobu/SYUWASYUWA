@@ -9,15 +9,32 @@ public class FlyBottle : MonoBehaviour
     [SerializeField] private float rightLimit;
     [SerializeField] private float speed;
     [SerializeField] private float riseSpeed;
+    [SerializeField] private GameObject flymodemanager;
     public static float shakePow = 1000f;
-    //public float ShakePow { get { return shakePow;} set { shakePow = value;} }
+    public static bool isStart;
+    private FlyModeManager _flyModeManager;
+    //public float ShakePow { get { return shakePow;} set { shakePow = value;}
+
+    private void Start()
+    {
+        isStart = false;
+        _flyModeManager = flymodemanager.GetComponent<FlyModeManager>();
+    }
 
     void Update()
     {
+        if (!isStart)
+        {
+            return;
+        }
         Debug.Log(shakePow);
         if (shakePow >= 0f)
         {
             Rise();
+        }
+        else
+        {
+            Finish();
         }
         //Vector3 dir = Vector3.zero;
         //dir.x = Input.acceleration.x;
@@ -38,6 +55,10 @@ public class FlyBottle : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!isStart)
+        {
+            return;
+        }
         Vector3 dir = Vector3.zero;
         dir.x = Input.acceleration.x;
 
@@ -65,6 +86,11 @@ public class FlyBottle : MonoBehaviour
         //transform.position += transform.forward * (-riseSpeed);
 
 
+    }
+
+    public void Finish()
+    {
+        _flyModeManager.FinishText();
     }
     
 
