@@ -10,14 +10,14 @@ public class FlyModeManager : MonoBehaviour
     void Start()
     {
         pow = FlyBottle.shakePow;
-        slider.value = pow;
+        slider.value = pow/2000f;
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        slider.value -= 1.0f;
+        slider.value -= 0.000325f;
+        FlyBottle.shakePow -= 0.65f;
         
     }
 }
