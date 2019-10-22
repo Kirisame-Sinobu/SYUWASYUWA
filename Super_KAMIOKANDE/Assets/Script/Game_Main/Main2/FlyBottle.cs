@@ -10,6 +10,7 @@ public class FlyBottle : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float riseSpeed;
     public static float shakePow;
+    //public float ShakePow { get { return shakePow;} set { shakePow = value;} }
 
     void Update()
     {
@@ -17,9 +18,9 @@ public class FlyBottle : MonoBehaviour
         Vector3 dir = Vector3.zero;
         dir.x = Input.acceleration.x;
 
-        //if(dir.sqrMagnitude > 1) {
-        //    dir.Normalize();
-        //}
+        if (dir.sqrMagnitude > 1) {
+            dir.Normalize();
+        }
 
         dir *= Time.deltaTime;
         transform.Translate(dir * speed);
@@ -30,6 +31,7 @@ public class FlyBottle : MonoBehaviour
 
     public void Rise() {
         this.transform.Translate(0,riseSpeed,0);
+        
     }
     
 
