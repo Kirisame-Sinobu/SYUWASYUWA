@@ -29,7 +29,7 @@ public class Shake_hand : MonoBehaviour
         if (isLock)
         {
             lockTime += Time.deltaTime;
-            if(lockTime >= 1.0f)
+            if(lockTime >= 2.0f)
             {
                 isLock = false;
             }
