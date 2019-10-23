@@ -12,8 +12,13 @@ public class Shake_hand : MonoBehaviour
 
     Vector3 is_shake;
 
+    bool isLock;
+    float lockTime;
+
     void Start()
     {
+        lockTime = 0f;
+        isLock = true;
         after_shake = Input.acceleration;
         befor_shake = after_shake;
     }
@@ -21,13 +26,28 @@ public class Shake_hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isLock)
+        {
+            lockTime += Time.deltaTime;
+            if(lockTime >= 1.0f)
+            {
+                isLock = false;
+            }
+            return;
+        }
         after_shake = Input.acceleration;
 
         is_shake = after_shake - befor_shake;
         //Debug.Log(is_shake.magnitude);
         if(is_shake.magnitude >= 1)
         {
-            SceneManager.LoadScene("Main");
+            if (SceneManager.GetActiveScene().name == "Title")
+            {
+                SceneManager.LoadScene("Main");
+            }else if(SceneManager.GetActiveScene().name == "Result")
+            {
+                SceneManager.LoadScene("Title");
+            }
         }
 
         befor_shake = after_shake;
