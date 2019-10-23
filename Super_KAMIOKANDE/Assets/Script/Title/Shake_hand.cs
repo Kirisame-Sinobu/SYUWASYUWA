@@ -39,7 +39,7 @@ public class Shake_hand : MonoBehaviour
 
         is_shake = after_shake - befor_shake;
         //Debug.Log(is_shake.magnitude);
-        if(is_shake.magnitude >= 1)
+        if(is_shake.magnitude >= 3)
         {
             if (SceneManager.GetActiveScene().name == "Title")
             {
