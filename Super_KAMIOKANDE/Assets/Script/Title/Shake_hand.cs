@@ -19,8 +19,11 @@ public class Shake_hand : MonoBehaviour
     {
         lockTime = 0f;
         isLock = true;
-        after_shake = Input.acceleration;
-        befor_shake = after_shake;
+        //after_shake = Input.acceleration;
+        after_shake = Vector3.zero;
+        //befor_shake = after_shake;
+        befor_shake = Vector3.zero;
+
     }
 
     // Update is called once per frame
