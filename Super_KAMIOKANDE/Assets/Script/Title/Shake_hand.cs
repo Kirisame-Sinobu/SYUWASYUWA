@@ -32,7 +32,7 @@ public class Shake_hand : MonoBehaviour
         if (isLock)
         {
             lockTime += Time.deltaTime;
-            if(lockTime >= 2.0f)
+            if(lockTime >= 1.0f)
             {
                 isLock = false;
             }
@@ -42,7 +42,7 @@ public class Shake_hand : MonoBehaviour
 
         is_shake = after_shake - befor_shake;
         //Debug.Log(is_shake.magnitude);
-        if(is_shake.magnitude >= 3)
+        if(is_shake.magnitude >= 1)
         {
             if (SceneManager.GetActiveScene().name == "Title")
             {

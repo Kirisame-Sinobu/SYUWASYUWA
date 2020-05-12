@@ -15,14 +15,10 @@ public class FlyBottle : MonoBehaviour
     private FlyModeManager _flyModeManager;
     //public float ShakePow { get { return shakePow;} set { shakePow = value;}
 
-    Vector3 dir;
-
     private void Start()
     {
-        Debug.Log("acceleration.x.start : " + Input.acceleration.x);
         isStart = false;
         _flyModeManager = flymodemanager.GetComponent<FlyModeManager>();
-        dir.x = 0.0f;
     }
 
     void Update()
@@ -63,12 +59,8 @@ public class FlyBottle : MonoBehaviour
         {
             return;
         }
-        dir = Vector3.zero;
-        if (Input.acceleration.x >= 0.1f || Input.acceleration.x <= -0.1f)
-        {
-            dir.x = Input.acceleration.x;
-        }
-        Debug.Log("dir.x1 : " + dir.x);
+        Vector3 dir = Vector3.zero;
+        dir.x = Input.acceleration.x;
 
         if (dir.sqrMagnitude > 1)
         {
@@ -77,9 +69,8 @@ public class FlyBottle : MonoBehaviour
 
 
         dir *= Time.deltaTime;
-        //Debug.Log(dir);
         // 入力情報
-        float turn = -dir.x * speed * 5;
+        float turn = -dir.x * speed * 10;
         // 現在の回転角度を0～360から-180～180に変換
         float rotateZ = (transform.eulerAngles.z > 180) ? transform.eulerAngles.z - 360 : transform.eulerAngles.z;
         // 現在の回転角度に入力(turn)を加味した回転角度をMathf.Clamp()を使いminAngleからMaxAngle内に収まるようにする
@@ -88,10 +79,6 @@ public class FlyBottle : MonoBehaviour
         angleZ = (angleZ < 0) ? angleZ + 360 : angleZ;
         // 回転角度をオブジェクトに適用
         transform.rotation = Quaternion.Euler(0, 0, angleZ);
-        Debug.Log("angleZ : " + angleZ);
-        Debug.Log("turn : " + turn);
-        Debug.Log("dir.x2 : " + dir.x);
-        Debug.Log("acceleration.x : " + Input.acceleration.x);
     }
 
     public void Rise() {
